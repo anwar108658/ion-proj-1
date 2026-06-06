@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { add, trash, pencil, arrowBack } from 'ionicons/icons';
+import { add, trash, pencil, arrowBack, trophyOutline, documentTextOutline, calendarOutline, chevronBackOutline } from 'ionicons/icons';
 
 
 @Component({
@@ -12,7 +12,11 @@ import { add, trash, pencil, arrowBack } from 'ionicons/icons';
 export class AppComponent {
   constructor() {
     addIcons({
-      arrowBack
+      arrowBack,
+      trophyOutline,
+      documentTextOutline,
+      calendarOutline,
+      chevronBackOutline,
     })
   }
 }

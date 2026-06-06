@@ -6,8 +6,12 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
   },
   {
+    path: 'homes',
+    loadComponent: () => import('./add-task/add-task.component').then((m) => m.AddTaskComponent),
+  },
+  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'homes',
     pathMatch: 'full',
   },
 ];

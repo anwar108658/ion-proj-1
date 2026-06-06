@@ -49,3 +49,25 @@
   --background-activated: #002f52;
   --color: white;
 }
+
+ion-icon.loop-circle-icon {
+  width: 24px;
+  height: 24px;
+  padding: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  margin-right: 10px;
+
+  background-color: currentColor;
+
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.822), 
+    rgba(255, 255, 255, 0.85)
+  );
+}
+
+ion-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
