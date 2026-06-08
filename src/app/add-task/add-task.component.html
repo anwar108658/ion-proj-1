@@ -1,20 +1,19 @@
-<ion-content [fullscreen]="true">
-  <!-- Header with texture background -->
-  <ion-header class="ion-no-border">
-    <div class="headerUI">
-      <div class="header-top">
-        <ion-button color="light" shape="round" class="close-btn">
-          <ion-icon slot="icon-only" name="close"></ion-icon>
-        </ion-button>
-        <div class="header-title-container">
-          <ion-text color="light">
-            <h2>Add New Task</h2>
-          </ion-text>
-        </div>
+<!-- Header with texture background -->
+<ion-header class="ion-no-border">
+  <div class="headerUI">
+    <div class="header-top">
+      <ion-button routerLink="/home" color="light" shape="round" class="close-btn">
+        <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+      <div class="header-title-container">
+        <ion-text color="light">
+          <h2>Add New Task</h2>
+        </ion-text>
       </div>
     </div>
-  </ion-header>
-
+  </div>
+</ion-header>
+<ion-content [fullscreen]="true">
   <!-- Form Content Area -->
   <div class="ion-padding main-content">
     <ion-card class="form-card">
@@ -79,7 +78,6 @@
             <ion-textarea placeholder="Add your notes here" rows="5"></ion-textarea>
           </ion-item>
         </div>
-
       </ion-card-content>
     </ion-card>
   </div>

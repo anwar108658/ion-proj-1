@@ -6,7 +6,6 @@
   background-size: cover;
   padding: 20px;
   margin: 5px !important;
-  height: 200px; // Slightly shorter to fit modal layout
   border-radius: 15px;
 
   .header-top {
@@ -39,7 +38,7 @@
 
 // Overlapping Form Container
 .main-content {
-  margin-top: -90px;
+  // margin-top: -90px;
   z-index: 10;
   position: relative;
 }
@@ -63,7 +62,7 @@
     display: block;
     color: #444444;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-bottom: 8px;
   }
 }
@@ -150,8 +149,8 @@
 
 // Footer Save button colors
 .footer-btn {
-  --background: #4a2880; // Matching your primary dark purple scheme
-  --background-hover: #3b1f66;
-  --background-activated: #2d184d;
+  --background: #004376;
+  --background-hover: #003861;
+  --background-activated: #002f52;
   --color: white;
 }
