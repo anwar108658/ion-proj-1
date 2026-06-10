@@ -132,21 +132,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    // Custom alignment for native ionic datetime buttons
-    ion-datetime-button {
-      --background: transparent;
-      margin: 0;
-      padding: 0;
-    }
-    
+    margin: 0;
     .input-icon {
       color: #a0aec0;
       font-size: 1.2rem;
     }
   }
 }
-
 // Footer Save button colors
 .footer-btn {
   --background: #004376;

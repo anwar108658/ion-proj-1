@@ -15,7 +15,7 @@
 </ion-header>
 <ion-content [fullscreen]="true">
   <!-- Form Content Area -->
-  <div class="ion-padding main-content">
+  <form [formGroup]="taskForm" class="ion-padding main-content">
     <ion-card class="form-card">
       <ion-card-content>
         
@@ -23,7 +23,7 @@
         <div class="input-group">
           <ion-label position="stacked" class="form-label">Task Title</ion-label>
           <ion-item lines="none" class="custom-input-item">
-            <ion-input placeholder="Pick up Milk" value="Pick up Milk"></ion-input>
+            <ion-input formControlName="task" placeholder="Pick up" value="Pick up"></ion-input>
           </ion-item>
         </div>
 
@@ -31,15 +31,11 @@
         <div class="input-group">
           <ion-label class="form-label">Category</ion-label>
           <div class="category-group">
-            <ion-button fill="clear" class="cat-btn selected-blue">
-              <ion-icon name="document-text-outline"></ion-icon>
-            </ion-button>
-            <ion-button fill="clear" class="cat-btn selected-purple">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </ion-button>
-            <ion-button fill="clear" class="cat-btn selected-yellow">
-              <ion-icon name="trophy-outline"></ion-icon>
-            </ion-button>
+            @for (item of categoryList; track $index) {
+              <ion-button (click)="getCategoryVal(item.iconName)" fill="clear" [class]="item.class">
+                <ion-icon [name]="item.iconName"></ion-icon>
+              </ion-button>
+            }
           </div>
         </div>
 
@@ -49,10 +45,10 @@
           <div class="datetime-row">
             <!-- Date Picker Item -->
             <ion-item lines="none" class="custom-input-item datetime-item">
-              <ion-datetime-button datetime="date-picker"></ion-datetime-button>
+              <ion-datetime-button  datetime="date-picker"></ion-datetime-button>
               <ion-modal [keepContentsMounted]="true">
                 <ng-template>
-                  <ion-datetime id="date-picker" presentation="date"></ion-datetime>
+                  <ion-datetime formControlName="date" id="date-picker" presentation="date"></ion-datetime>
                 </ng-template>
               </ion-modal>
               <ion-icon name="calendar-clear-outline" slot="end" class="input-icon"></ion-icon>
@@ -63,7 +59,7 @@
               <ion-datetime-button datetime="time-picker"></ion-datetime-button>
               <ion-modal [keepContentsMounted]="true">
                 <ng-template>
-                  <ion-datetime id="time-picker" presentation="time"></ion-datetime>
+                  <ion-datetime formControlName="time" id="time-picker" presentation="time"></ion-datetime>
                 </ng-template>
               </ion-modal>
               <ion-icon name="time-outline" slot="end" class="input-icon"></ion-icon>
@@ -75,15 +71,15 @@
         <div class="input-group">
           <ion-label position="stacked" class="form-label">Notes</ion-label>
           <ion-item lines="none" class="custom-input-item textarea-item">
-            <ion-textarea placeholder="Add your notes here" rows="5"></ion-textarea>
+            <ion-textarea formControlName="taskDetail" placeholder="Add your notes here" rows="5"></ion-textarea>
           </ion-item>
         </div>
       </ion-card-content>
     </ion-card>
-  </div>
+  </form>
 </ion-content>
 
 <!-- Save Button Footer -->
 <ion-footer class="ion-no-border ion-padding">
-  <ion-button expand="block" class="footer-btn" shape="round" size="large">Save</ion-button>
+  <ion-button (click)="onSubmit()" expand="block" class="footer-btn" shape="round" size="large">Save</ion-button>
 </ion-footer>
